@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
 
@@ -102,6 +103,7 @@ public class FadeInTextView extends TextView {
                 int index = (int) valueAnimator.getAnimatedValue();
                 //过滤去重，保证每个字只重绘一次
                 if (currentIndex != index) {
+                    Log.i("mmm","====onAnimationUpdate===index:"+index);
                     stringBuffer.append(arr[index]);
                     currentIndex = index;
                     //所有文字都显示完成之后进度回调结束动画
@@ -112,6 +114,7 @@ public class FadeInTextView extends TextView {
                     }
 
                     //新思路的做法
+                    Log.i("mmm","====onAnimationUpdate===string:"+stringBuffer.toString());
                     setText(stringBuffer.toString());
 
                     /**

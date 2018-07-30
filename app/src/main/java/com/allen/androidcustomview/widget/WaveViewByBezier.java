@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
@@ -211,6 +212,7 @@ public class WaveViewByBezier extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 mOffset = (int) animation.getAnimatedValue();
+                Log.i("test","==================> "+mOffset);
                 invalidate();
             }
         });
