@@ -10,6 +10,7 @@ import android.view.View;
 import com.allen.androidcustomview.R;
 import com.allen.androidcustomview.adapter.MainAdapter;
 import com.allen.androidcustomview.bean.TypeBean;
+import com.allen.androidcustomview.circlemenu.CircleActivity;
 import com.allen.androidcustomview.explosion.ExpActivity;
 import com.allen.androidcustomview.tagview.TagActivity;
 import com.allen.androidcustomview.widget.SuperDividerItemDecoration;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         typeBeans.add(new TypeBean("banner", 10));
         typeBeans.add(new TypeBean("吸顶效果--一行代码实现", 11));
         typeBeans.add(new TypeBean("粒子破碎效果",12));
+        typeBeans.add(new TypeBean("圆形旋转菜单",13));
         return typeBeans;
     }
 
@@ -103,6 +105,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 12:
                 startActivity(new Intent(MainActivity.this, ExpActivity.class));
+                break;
+            case 13:
+                startActivity(new Intent(MainActivity.this, CircleActivity.class));
                 break;
         }
     }
