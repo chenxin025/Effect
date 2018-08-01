@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.allen.androidcustomview.R;
 import com.allen.androidcustomview.adapter.MainAdapter;
+import com.allen.androidcustomview.arcmenu.ArcMenuActivity;
 import com.allen.androidcustomview.bean.TypeBean;
 import com.allen.androidcustomview.circlemenu.CircleActivity;
 import com.allen.androidcustomview.expandwave.ExpandWaveActivity;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         typeBeans.add(new TypeBean("圆形旋转菜单",13));
         typeBeans.add(new TypeBean("雪花漂浮效果",14));
         typeBeans.add(new TypeBean("圆环波纹扩散效果",15));
+        typeBeans.add(new TypeBean("菜单Path动画",16));
         return typeBeans;
     }
 
@@ -118,6 +120,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 15:
                 startActivity(new Intent(MainActivity.this, ExpandWaveActivity.class));
+                break;
+            case 16:
+                startActivity(new Intent(MainActivity.this, ArcMenuActivity.class));
                 break;
         }
     }

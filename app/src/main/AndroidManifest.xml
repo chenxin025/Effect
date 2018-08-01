@@ -39,6 +39,7 @@
         <activity android:name=".circlemenu.CircleActivity"/>
         <activity android:name=".snow.SnowActivity"/>
         <activity android:name=".expandwave.ExpandWaveActivity"/>
+        <activity android:name=".arcmenu.ArcMenuActivity"/>
     </application>
 
 </manifest>

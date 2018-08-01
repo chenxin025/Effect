@@ -1,0 +1,46 @@
+<com.allen.androidcustomview.arcmenu.ArcMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_arcmenu"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    app:arcMargin="15dp"
+    app:arcPosition="center_bottom"
+    app:arcRadius="130dp">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/chooser_button"
+        tools:ignore="ContentDescription"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/composer_camera"
+        android:tag="Camera"
+        tools:ignore="ContentDescription"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/composer_music"
+        android:tag="Music"
+        tools:ignore="ContentDescription"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/composer_place"
+        android:tag="Place"
+        tools:ignore="ContentDescription"
+        />
+
+</com.allen.androidcustomview.arcmenu.ArcMenu>

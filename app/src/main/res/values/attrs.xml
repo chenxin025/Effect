@@ -89,4 +89,16 @@
             <enum name="strokeRipple" value="1"/>
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="ArcMenu">
+        <attr name="arcPosition">
+            <enum name="left_top" value="0" />
+            <enum name="right_top" value="1" />
+            <enum name="right_bottom" value="2" />
+            <enum name="left_bottom" value="3" />
+            <enum name="center_bottom" value="4" />
+        </attr>
+        <attr name="arcRadius" format="dimension" />
+        <attr name="arcMargin" format="dimension" />
+    </declare-styleable>
 </resources>
