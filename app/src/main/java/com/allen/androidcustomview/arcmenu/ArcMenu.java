@@ -317,8 +317,15 @@ public class ArcMenu extends ViewGroup implements OnClickListener {
 
             AnimationSet animset = new AnimationSet(true);
             Animation animation = null;
-                                            if (mCurrentStatus == Status.CLOSE) {// to open
+            if (mCurrentStatus == Status.CLOSE) {// to open
                 animset.setInterpolator(new OvershootInterpolator(2F));
+
+                //float fromXDelta:这个参数表示动画开始的点离当前View X坐标上的差值；
+                //float toXDelta, 这个参数表示动画结束的点离当前View X坐标上的差值；
+                //float fromYDelta, 这个参数表示动画开始的点离当前View Y坐标上的差值；
+                //float toYDelta)这个参数表示动画开始的点离当前View Y坐标上的差值；
+                //如果view在A(x,y)点 那么动画就是从B点(x+fromXDelta, y+fromYDelta)点移动到C 点(x+toXDelta,y+toYDelta)点.
+
                 animation = new TranslateAnimation(xflag * cl, 0, yflag * ct, 0);
                 childView.setClickable(true);
                 childView.setFocusable(true);
