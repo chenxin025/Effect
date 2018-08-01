@@ -11,6 +11,7 @@ import com.allen.androidcustomview.R;
 import com.allen.androidcustomview.adapter.MainAdapter;
 import com.allen.androidcustomview.bean.TypeBean;
 import com.allen.androidcustomview.circlemenu.CircleActivity;
+import com.allen.androidcustomview.expandwave.ExpandWaveActivity;
 import com.allen.androidcustomview.explosion.ExpActivity;
 import com.allen.androidcustomview.snow.SnowActivity;
 import com.allen.androidcustomview.tagview.TagActivity;
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         typeBeans.add(new TypeBean("粒子破碎效果",12));
         typeBeans.add(new TypeBean("圆形旋转菜单",13));
         typeBeans.add(new TypeBean("雪花漂浮效果",14));
+        typeBeans.add(new TypeBean("圆环波纹扩散效果",15));
         return typeBeans;
     }
 
@@ -113,6 +115,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 14:
                 startActivity(new Intent(MainActivity.this, SnowActivity.class));
+                break;
+            case 15:
+                startActivity(new Intent(MainActivity.this, ExpandWaveActivity.class));
                 break;
         }
     }

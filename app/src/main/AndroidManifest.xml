@@ -38,6 +38,7 @@
         <activity android:name=".explosion.ExpActivity"/>
         <activity android:name=".circlemenu.CircleActivity"/>
         <activity android:name=".snow.SnowActivity"/>
+        <activity android:name=".expandwave.ExpandWaveActivity"/>
     </application>
 
 </manifest>

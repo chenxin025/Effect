@@ -19,4 +19,6 @@
 
     <color name="wave_start2">#80FF7E37</color>
     <color name="wave_end2">#80EB4438</color>
+
+    <color name="rippelColor">#0099CC</color>
 </resources>
