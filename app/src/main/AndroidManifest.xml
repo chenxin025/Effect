@@ -41,6 +41,7 @@
         <activity android:name=".expandwave.ExpandWaveActivity"/>
         <activity android:name=".arcmenu.ArcMenuActivity"/>
         <activity android:name=".arcmenu.AnimatorActivity"/>
+        <activity android:name=".filtermenu.FilterActivity"/>
     </application>
 
 </manifest>

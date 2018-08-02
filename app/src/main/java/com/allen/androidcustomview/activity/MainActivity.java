@@ -15,6 +15,7 @@ import com.allen.androidcustomview.bean.TypeBean;
 import com.allen.androidcustomview.circlemenu.CircleActivity;
 import com.allen.androidcustomview.expandwave.ExpandWaveActivity;
 import com.allen.androidcustomview.explosion.ExpActivity;
+import com.allen.androidcustomview.filtermenu.FilterActivity;
 import com.allen.androidcustomview.snow.SnowActivity;
 import com.allen.androidcustomview.tagview.TagActivity;
 import com.allen.androidcustomview.widget.SuperDividerItemDecoration;
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         typeBeans.add(new TypeBean("圆环波纹扩散效果",15));
         typeBeans.add(new TypeBean("菜单Path动画",16));
         typeBeans.add(new TypeBean("菜单Path Animator 动画",17));
+        typeBeans.add(new TypeBean("菜单Filter 动画",18));
         return typeBeans;
     }
 
@@ -128,6 +130,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 17:
                 startActivity(new Intent(MainActivity.this, AnimatorActivity.class));
+                break;
+            case 18:
+                startActivity(new Intent(MainActivity.this, FilterActivity.class));
                 break;
         }
     }
