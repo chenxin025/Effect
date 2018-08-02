@@ -7,6 +7,7 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
@@ -14,12 +15,13 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 
 import com.allen.androidcustomview.R;
+import com.allen.androidcustomview.bottompop.BottomDialog;
 
 /**
  * Created by chenxin on 2018/8/2.
  */
 
-public class AnimatorActivity extends Activity {
+public class AnimatorActivity extends AppCompatActivity {
     private ImageView mImageView1;
     private ImageView mImageView2;
     private ImageView mImageView3;
@@ -34,6 +36,8 @@ public class AnimatorActivity extends Activity {
             @Override
             public void onClick(View v) {
                 animRunBack(mImageView1,mImageView2,mImageView3);
+                BottomDialog.showDialog(AnimatorActivity.this);
+
             }
         });
         mImageView2 = findViewById(R.id.anim2);
