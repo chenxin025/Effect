@@ -40,6 +40,7 @@
         <activity android:name=".snow.SnowActivity"/>
         <activity android:name=".expandwave.ExpandWaveActivity"/>
         <activity android:name=".arcmenu.ArcMenuActivity"/>
+        <activity android:name=".arcmenu.AnimatorActivity"/>
     </application>
 
 </manifest>
