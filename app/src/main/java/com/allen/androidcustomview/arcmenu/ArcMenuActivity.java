@@ -15,19 +15,19 @@ import com.allen.androidcustomview.R;
  */
 public class ArcMenuActivity extends Activity {
 
-    private ArcMenu mArcMenu;
+    private LineMenu mArcMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.arc_menu_layout);
+        setContentView(R.layout.arc_menu_layout2);
 
         initViews();
     }
 
     private void initViews() {
-        mArcMenu = (ArcMenu) findViewById(R.id.id_arcmenu);
+        mArcMenu =  findViewById(R.id.id_arcmenu);
 
         initArcMenu();
     }
@@ -39,12 +39,12 @@ public class ArcMenuActivity extends Activity {
         people.setTag("Sleep");
         mArcMenu.addView(people);
 
-        mArcMenu.setOnMenuItemClickListener(new ArcMenu.OnMenuItemClickListener() {
+      /*  mArcMenu.setOnMenuItemClickListener(new ArcMenu.OnMenuItemClickListener() {
             @Override
             public void onClick(View view, int pos) {
                 Toast.makeText(ArcMenuActivity.this, view.getTag() + "; position :" + pos, Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
 
         /*mArcMenu.setOnMenuItemClickListener((view, pos) -> {
             Toast.makeText(this, view.getTag() + "; position :" + pos, Toast.LENGTH_LONG).show();
