@@ -42,6 +42,8 @@
         <activity android:name=".arcmenu.ArcMenuActivity"/>
         <activity android:name=".arcmenu.AnimatorActivity"/>
         <activity android:name=".filtermenu.FilterActivity"/>
+        <activity android:name=".scrollerwhile.ScrollerActivity"/>
+        <activity android:name=".wave.WaveActivity"/>
     </application>
 
 </manifest>

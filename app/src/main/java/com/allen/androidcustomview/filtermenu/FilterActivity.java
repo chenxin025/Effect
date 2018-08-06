@@ -90,7 +90,7 @@ public class FilterActivity extends Activity {
 
         @Override
         public void onMenuItemClick(View view, int position) {
-          //  Toast.makeText(MainActivity.this, "Touched position " + position, Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(ScrollerActivity.this, "Touched position " + position, Toast.LENGTH_SHORT).show();
         }
 
 

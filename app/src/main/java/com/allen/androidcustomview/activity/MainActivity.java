@@ -16,8 +16,10 @@ import com.allen.androidcustomview.circlemenu.CircleActivity;
 import com.allen.androidcustomview.expandwave.ExpandWaveActivity;
 import com.allen.androidcustomview.explosion.ExpActivity;
 import com.allen.androidcustomview.filtermenu.FilterActivity;
+import com.allen.androidcustomview.scrollerwhile.ScrollerActivity;
 import com.allen.androidcustomview.snow.SnowActivity;
 import com.allen.androidcustomview.tagview.TagActivity;
+import com.allen.androidcustomview.wave.WaveActivity;
 import com.allen.androidcustomview.widget.SuperDividerItemDecoration;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
@@ -71,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         typeBeans.add(new TypeBean("菜单Path动画",16));
         typeBeans.add(new TypeBean("菜单Path Animator 动画",17));
         typeBeans.add(new TypeBean("菜单Filter 动画",18));
+        typeBeans.add(new TypeBean("仿消消乐无限循环动画",19));
+        typeBeans.add(new TypeBean("Wave",20));
         return typeBeans;
     }
 
@@ -133,6 +137,12 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 18:
                 startActivity(new Intent(MainActivity.this, FilterActivity.class));
+                break;
+            case 19:
+                startActivity(new Intent(MainActivity.this, ScrollerActivity.class));
+                break;
+            case 20:
+                startActivity(new Intent(MainActivity.this, WaveActivity.class));
                 break;
         }
     }
