@@ -3,8 +3,10 @@ package com.allen.androidcustomview.wave;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Shader;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
@@ -19,6 +21,8 @@ import java.util.Random;
  */
 
 public class WaveView extends View {
+
+    private float[] waveAmplitude = {1.0f, 0.7f, 0.4f, 0.1f, -1.0f};
     public WaveView(Context context) {
         super(context);
     }
@@ -47,7 +51,7 @@ public class WaveView extends View {
         // 初始化画笔
         Paint paint = new Paint();
         paint.setStrokeWidth(1);// 画线宽度
-      //  paint.setStyle(Paint.Style.STROKE);//空心效果
+        //paint.setStyle(Paint.Style.STROKE);//空心效果
         paint.setAntiAlias(true);//抗锯齿
         //paint.setColor(Color.BLACK);
 
@@ -98,12 +102,24 @@ public class WaveView extends View {
             waveWidth[i] = waveWidth[i] * density / 2;
         }
 
-        float[] waveAlpha = {1.0f, 0.9f, 0.7f, 0.4f, 0.2f};
-        float[] waveAmplitude = {1.0f, 0.7f, 0.4f, 0.1f, -0.5f};
+        //float[] waveAlpha = {1.0f, 0.9f, 0.7f, 0.4f, 0.2f};
+        float[] waveAlpha = {1.0f, 0.9f, 0.7f, 0.4f, 1.0f};
+        //float[] waveAmplitude = {1.0f, 0.7f, 0.4f, 0.1f, -0.2f};
+        //float[] waveAmplitude = {1.0f, 0.7f, 0.4f, 0.1f, -0.5f};
         for (int i = 0; i < waveWidth.length; i++) {
             paint.setStrokeWidth(waveWidth[i]);//画笔宽度
             paint.setAlpha((int) (waveAlpha[i] * 255));//画笔透明度
-           // paint.setColor(Color.parseColor(strings[i]));
+            //paint.setColor(Color.parseColor(strings[i]));
+            paint.setColor(Color.parseColor(getRandomColor()));
+
+
+            int colorStart = Color.parseColor(getRandomColor());
+            int color1 = Color.parseColor(getRandomColor());
+            int colorEnd = Color.parseColor(getRandomColor());
+            LinearGradient backGradient = new LinearGradient(0, 0, width, height, new int[]{colorStart, color1 ,colorEnd}, null, Shader.TileMode.CLAMP);
+//        LinearGradient backGradient = new LinearGradient(0, 0, 0, height, new int[]{colorStart, color1 ,colorEnd}, null, Shader.TileMode.CLAMP);
+            paint.setShader(backGradient);
+
             sinPath.reset();//重置线条
             sinPath.moveTo(-midWidth, 0);
 
@@ -114,7 +130,7 @@ public class WaveView extends View {
                 float y = (float) (midHeight// 将正弦值限定到绘图区的高度上
                         * sine   // 正弦值
                         * scaling// 振幅修正 - 距离中心越远，振幅越小
-                        * waveAmplitude[i]// 副波纹振幅修正
+                        * getFloatWate()//waveAmplitude[i]// 副波纹振幅修正
                 );
                 sinPath.lineTo(x, y);
             }
@@ -127,7 +143,10 @@ public class WaveView extends View {
         canvas.restore();
     }
 
-    private String[] strings = new String[]{"#179F76", "#2A74FF", "#9B2E2E","#9B2E2E","#179F76"};
+    private String[] strings = new String[]{"#179F76", "#2A74FF", "#9B2E2E","#9B2E2E","#0099CC"};
+
+
+
     private float phase;
     private Random ra;
     public void nextPhase(float n) {
@@ -135,9 +154,31 @@ public class WaveView extends View {
         invalidate();
     }
 
+
+
+    public float getFloatWate() {
+        Random random = new Random();
+        int i = random.nextInt(5);
+        return waveAmplitude[i];
+    }
+
     public void start(){
         ra =new Random();
-        handler.sendEmptyMessageDelayed(1, 50);
+        handler.sendEmptyMessageDelayed(1, getRandomTime());
+    }
+
+
+    public String getRandomColor(){
+        Random random = new Random();
+        int i = random.nextInt(5);
+       // int arr[] = {10,30,20,50};
+        return strings[i];
+    }
+    public int getRandomTime() {
+        Random random = new Random();
+        int i = random.nextInt(4);
+        int arr[] = {10,30,20,50};
+        return arr[i];
     }
 
     private Handler handler = new Handler() {
@@ -146,8 +187,9 @@ public class WaveView extends View {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 1:
-                    nextPhase(ra.nextInt(50)+50);
-                    handler.sendEmptyMessageDelayed(1, 200);
+                    nextPhase(ra.nextInt(50)+100);
+                   // handler.sendEmptyMessageDelayed(1, getRandomTime());
+                    handler.sendEmptyMessageDelayed(1, 100);
                     break;
             }
         }

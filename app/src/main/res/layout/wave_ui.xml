@@ -4,11 +4,24 @@
     android:layout_height="match_parent">
 
 
+    <com.allen.androidcustomview.wave.MyCustomView
+        android:id="@+id/key_dul"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@+id/key_wave"
+        />
+
     <com.allen.androidcustomview.wave.WaveView
         android:id="@+id/key_wave"
         android:layout_centerVertical="true"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
+
+    <com.allen.androidcustomview.wave.SiriView
+        android:id="@+id/siriView"
+        android:layout_below="@id/key_wave"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
 
     <Button
         android:id="@+id/key_start"
